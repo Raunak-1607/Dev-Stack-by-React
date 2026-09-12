@@ -22,6 +22,7 @@ function App() {
       <Suspense fallback="Loading.....">
        <Data DevPromise={DevPromise}></Data>
       </Suspense>
+      
     </>
   )
 }

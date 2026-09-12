@@ -1,11 +1,25 @@
+import { useState, type Dispatch, type SetStateAction } from 'react';
 import type { Technology } from '../Type/Type';
+import { toast } from 'react-toastify';
 
 interface CardProps {
-    technologies: Technology
+    technologies: Technology,
+    selectedTech : object[],
+    setSelectedTech : Dispatch<SetStateAction<object[]>>
 }
 
-const DataCard = ({ technologies }: CardProps) => {
+const DataCard = ({ technologies, selectedTech , setSelectedTech}: CardProps) => {
     const { name, category, description, icon, rating, difficulty, badge } = technologies;
+
+    const [isSelected , setIsSelected] = useState(false)
+    // console.log(isSelected , setIsSelected , "IsSelected" , "setIsSelected")
+
+    const handleBtn = ()=>{
+        setIsSelected(true);
+        toast.success(`${name} is selected`);
+
+        setSelectedTech([...selectedTech, technologies]);
+    }
 
     return (
         <div className="flex min-h-72 flex-col rounded-xl border border-slate-100 bg-white p-5 shadow-sm transition-shadow hover:shadow-md">
@@ -24,8 +38,12 @@ const DataCard = ({ technologies }: CardProps) => {
                 <span className="text-center">{difficulty}</span>
                 <span className="text-right text-amber-500">★ {rating}</span>
             </div>
-            <button type="button" className="mt-3 rounded-md bg-slate-950 py-2 text-xs font-medium text-white transition-colors hover:bg-slate-800">
-                Add to Stack
+            <button 
+            onClick={handleBtn}
+            type="button" 
+            className="mt-3 rounded-md bg-slate-950 py-2 text-xs font-medium text-white transition-colors hover:bg-slate-800"
+             disabled= {isSelected ===true? true : false} >
+                { isSelected=== true? "Selected": "Add to Stack"}
             </button>
         </div>
     );

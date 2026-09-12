@@ -1,4 +1,4 @@
-import { use } from 'react';
+import { use, useState } from 'react';
 import type { Technology } from '../Type/Type';
 import AvailableTech from './AvailableTech';
 
@@ -9,6 +9,7 @@ interface dataProps {
 const Data = ({DevPromise} : dataProps) => {
     const technology = use(DevPromise)
     // console.log(technology)
+    const [selectedTech, setSelectedTech] = useState<Technology[]>([])
     return (
         <div className='container mx-auto'>
             <div>
@@ -18,7 +19,7 @@ const Data = ({DevPromise} : dataProps) => {
                   <p className="mt-3 text-xl text-slate-500">Pick one technology per category to build your ideal stack.</p>
             </div>
 
-            <AvailableTech technology={technology}></AvailableTech>
+            <AvailableTech technology={technology} selectedTech={selectedTech} setSelectedTech={setSelectedTech}></AvailableTech>
         </div>
     );
 };
