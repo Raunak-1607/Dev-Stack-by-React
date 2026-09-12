@@ -3,6 +3,7 @@ import './index.css';
 import Nav from './Nav';
 import Hero from './Hero';
 import Data from './component/Data';
+import Footer from './component/Footer';
 
 
 function App() {
@@ -22,7 +23,8 @@ function App() {
       <Suspense fallback="Loading.....">
        <Data DevPromise={DevPromise}></Data>
       </Suspense>
-      
+      <Footer></Footer>
+
     </>
   )
 }

@@ -13,14 +13,14 @@ const AvailableTech = ({technology, selectedTech , setSelectedTech}:availablePro
     // console.log(technology , "Available")
     return (
        <div className='flex gap-4'>
-          <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid grid-cols-3">
             {
                 technology.map((technologies: Technology) => (
                     <DataCard
                         key={technologies.id}
                         technologies={technologies}
                         selectedTech={selectedTech}
-                        setSelectedTech={setSelectedTech as unknown as Dispatch<SetStateAction<object[]>>}
+                        setSelectedTech={setSelectedTech}
                     />
                 ))
             }
