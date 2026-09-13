@@ -9,7 +9,7 @@ import Footer from './component/Footer';
 function App() {
   
   const dataFetch = async ()=>{
-       const res = await fetch('../public/data.json');
+       const res = await fetch('/data.json');
        const data= await res.json();
        return data;
   }
