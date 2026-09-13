@@ -12,8 +12,8 @@ interface availableProps {
 const AvailableTech = ({technology, selectedTech , setSelectedTech}:availableProps) => {
     // console.log(technology , "Available")
     return (
-       <div className='flex gap-4'>
-          <div className="mt-8 grid grid-cols-3">
+       <div className='flex flex-col gap-4 sm:flex-row'>
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {
                 technology.map((technologies: Technology) => (
                     <DataCard

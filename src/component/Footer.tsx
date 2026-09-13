@@ -5,20 +5,20 @@ const Footer = () => {
     return (
         <>
             <div className="container mx-auto mt-16 py-10 flex justify-between">
-                <div>
-                    <img src={Logo} alt="logo"/>
+                <div className="text-center md:text-left">
+                    <img  src={Logo} alt="logo" className='mx-auto md:mx-0'/>
                     <p className='text-slate-500 mt-4'>Curated tools, technologies, and resources for developers building<br/>
                        modern software.
                     </p>
 
-                    <ul className='flex gap-4 text-slate-600 mt-4'>
+                    <ul className='flex justify-center md:justify-start gap-4 text-slate-600 mt-4'>
                         <li>GitHub</li>
                         <li>Twitter</li>
                         <li>Linkedin</li>
                     </ul>
                 </div>
 
-                <div>
+                <div className="hidden md:block">
                     <h3 className="font-bold">PRODUCT</h3>
                     <ul className='text-slate-500 mt-3'>
                         <li>Home</li>
@@ -28,7 +28,7 @@ const Footer = () => {
 
                 </div>
 
-                <div>
+                <div className="hidden md:block">
                     <h3 className="font-bold">COMPANY</h3>
                     <ul className='text-slate-500 mt-3'>
                     <li>About</li>
@@ -37,7 +37,7 @@ const Footer = () => {
                     </ul>
                 </div>
 
-                <div>
+                <div className="hidden md:block">
                     <h3 className="font-bold">LEGAL</h3>
                     <ul className='text-slate-500 mt-3'>
                         <li>Privacy Policy</li>
