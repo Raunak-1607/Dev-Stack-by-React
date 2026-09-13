@@ -1,4 +1,4 @@
-import { Suspense } from 'react'
+import { Suspense, useState } from 'react'
 import './index.css';
 import Nav from './Nav';
 import Hero from './Hero';
@@ -14,7 +14,8 @@ function App() {
        return data;
   }
 
-  const DevPromise = dataFetch();
+  // const DevPromise = dataFetch();
+  const [DevPromise] = useState(()=>dataFetch());
 
   return (
     <>
